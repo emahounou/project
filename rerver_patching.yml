@@ -1,0 +1,11 @@
+---
+
+- hosts: centos
+  tasks:
+  - name: Patch centos7 and centos8 servers
+    yum:
+      name: "*"
+      state: latest
+  - name: Reboot the server
+    reboot:
+      msg: "Reboot initiated by Ansible for kernel updates"
